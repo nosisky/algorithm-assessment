@@ -1,14 +1,12 @@
 const checkSherlock = (arr) => {
-  const isSherlock = (elem, i, arr) => {
-    const sum = (i, n) => {
-      return i < n ? arr[i] + sum(i + 1, n) : 0;
+  function isSherlock(elem, index, arr) {
+    function sum(index, n) {
+      return index < n ? arr[index] + sum(index + 1, n) : 0;
     }
-    return sum(0, i) === sum(i + 1, arr.length);
+    return sum(0, index) === sum(index + 1, arr.length);
   }
 
-  return arr.some(isSherlock) ? "Yes" : 'No';
-
+  return arr.some(isSherlock) ? 'YES' : 'NO';
 }
 
-checkSherlock([1, 2, 3])
-
+checkSherlock([1, 2, 3, 3])
