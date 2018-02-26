@@ -6,7 +6,7 @@ const checkSherlock = (arr) => {
     return sum(0, i) === sum(i + 1, arr.length);
   }
 
-  return arr.some(isSherlock)
+  return arr.some(isSherlock) ? "Yes" : 'No';
 
 }
 
